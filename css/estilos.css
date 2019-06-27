@@ -1,0 +1,67 @@
+/*Estilo general de toda la página*/
+body{
+  font-family: 'Dancing Script', cursive;
+  background-color: #02010a;
+}
+
+/*Estilo en la cabecera de la página*/
+header{
+  background-color: #5b7989 ;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+	flex-flow: row wrap;
+}
+
+/*Estilo asignado específicamente al título de la cabecera*/
+#titulo{
+  color: white;
+  text-shadow: 2px 2px #02010a;
+  width: 68%;
+  font-size: 50px;
+  margin: 2%;
+}
+
+/*Estilos para la navegación*/
+header nav{
+  padding: 3% 0% 0% 0%;
+  font-size: 30px;
+}
+
+/*Estilos para los enlaces que están dentro de la navegación*/
+header a{
+  margin: 15px;
+}
+
+/*Estilos para el enlace actual, ya que contiene la class pagActual*/
+.pagActual{
+  text-decoration: none;
+}
+
+/*Estilo a la sección de la imagen principal*/
+#imagenCentral{
+  background-color: #82c3a6;
+  display: flex;
+  justify-content: center;
+}
+
+/*Estilos a todas las imágenes*/
+img{
+  width: 100%;
+  max-width: 100%;
+}
+
+#contenido{
+  margin: 0 auto;
+}
+
+@media all and (min-width: 900px) {
+  #contenido, header{
+    width: 900px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  #contenido, header{
+    width: 100%;
+  }
+}
