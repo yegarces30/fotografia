@@ -11,6 +11,8 @@ header{
   display: flex;
   border-radius: 10px 10px 0px 0px;
 	flex-flow: row wrap;
+  -webkit-animation: movHeader 1s ;
+  animation: movHeader 1s ;
 }
 
 /*Estilo asignado específicamente al título de la cabecera*/
@@ -19,6 +21,7 @@ header{
   text-shadow: 2px 2px #02010a;
   width: 58%;
   margin: 2%;
+  font-size: 40px;
 }
 
 /*Estilos para la navegación*/
@@ -30,6 +33,8 @@ header nav{
 /*Estilos para los enlaces que están dentro de la navegación*/
 header a{
   margin: 15px;
+  color: white;
+  font-weight: bold;
 }
 
 /*Estilos para el enlace actual, ya que contiene la class pagActual*/
@@ -76,7 +81,7 @@ img{
 
 /*Se establecen estilos para cuando la pantalla del navegador tengan un ancho mínimo de 900px*/
 @media all and (min-width: 900px) {
-  #contenido, header, footer{
+  #contenido, header, footer, #galeria{
     width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -90,14 +95,15 @@ img{
     padding: 1%;
     margin: 2%;
   }
-  #titulo{
-    font-size: 40px;
+  .imagenesGaleria{
+    width: 31%;
+    padding: 1%;
   }
 }
 
 /*Se establecen estilos para cuando la pantalla del navegador tengan un ancho máximo de 900px*/
 @media all and (max-width: 900px) {
-  #contenido, header, footer{
+  #contenido, header, footer, #galeria{
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -115,7 +121,11 @@ img{
     margin: 5%;
   }
   #titulo{
-    font-size: 26px;
+    text-align: center;
+  }
+  .imagenesGaleria{
+    padding: 10%;
+    width: 80%;
   }
 }
 
@@ -221,4 +231,38 @@ footer >section{
 .cuerpoPiePagina{
   width: 80%;
   color: black;
+}
+
+/*Manejo de estilos para las páginas paisajes.html y retratos.html*/
+#galeria{
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #d5c75f;
+}
+
+/*Estilos que agregan filtros a las imágenes*/
+.imgUno{
+  -webkit-filter: blur(10px) drop-shadow(2px 2px 0px black);
+  filter: blur(10px) drop-shadow(2px 2px 0px black);
+}
+.imgPar{
+  -webkit-filter:grayscale(100%) drop-shadow(2px 2px 0px black);
+  filter: grayscale(100%) drop-shadow(2px 2px 0px black);
+}
+.imgTres{
+  -webkit-filter: sepia(90%) drop-shadow(2px 2px 0px black);
+  filter: sepia(90%) drop-shadow(2px 2px 0px black);
+}
+
+/*Se programa la animación del header*/
+@-webkit-keyframes movHeader {
+  0%{
+    margin-top: 150%;
+  }
+  60%{
+    margin-top: -5%;
+  }
+  100%{
+    margin-top: 0%;
+  }
 }
