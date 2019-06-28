@@ -8,8 +8,8 @@ body{
 /*Estilo en la cabecera de la página*/
 header{
   background-color: #5b7989 ;
-  border-radius: 10px 10px 0px 0px;
   display: flex;
+  border-radius: 10px 10px 0px 0px;
 	flex-flow: row wrap;
 }
 
@@ -18,7 +18,6 @@ header{
   color: white;
   text-shadow: 2px 2px #02010a;
   width: 58%;
-  font-size: 40px;
   margin: 2%;
 }
 
@@ -53,11 +52,13 @@ img{
   filter: drop-shadow(2px 2px 0px black);
 }
 
+/*contenido es del div que maneja toda la parte de las imágenes central y secundarias*/
 #contenido{
   margin: 0 auto;
   background-color: #d5c75f ;
 }
 
+/*Se establecen estilos generales para la sección que contiene las imágenes secundarias*/
 #imagenSecundaria{
   width: 100%;
   display: flex;
@@ -66,16 +67,16 @@ img{
   font-size: 200%;
 }
 
-
-
+/*Se refiere a la clase que esta asígnada a las imágenes secundarias*/
 .imgSec{
   border: 1px solid black;
   padding: 0px;
   width: 100%;
 }
 
+/*Se establecen estilos para cuando la pantalla del navegador tengan un ancho mínimo de 900px*/
 @media all and (min-width: 900px) {
-  #contenido, header{
+  #contenido, header, footer{
     width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -84,14 +85,23 @@ img{
     padding: 5%;
     width: 40%;
   }
+  footer >section{
+    width: 19%;
+    padding: 1%;
+    margin: 2%;
+  }
+  #titulo{
+    font-size: 40px;
+  }
 }
 
-
+/*Se establecen estilos para cuando la pantalla del navegador tengan un ancho máximo de 900px*/
 @media all and (max-width: 900px) {
-  #contenido, header{
+  #contenido, header, footer{
     width: 100%;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
   }
   .divImgSec{
     padding: 5%;
@@ -99,8 +109,17 @@ img{
     margin-left: auto;
     margin-right: auto;
   }
+  footer >section{
+    width: 100%;
+    padding: 0%;
+    margin: 5%;
+  }
+  #titulo{
+    font-size: 26px;
+  }
 }
 
+/*Aquí se programa la animación de la imágen secundaria de paisaje para el navegador Safari*/
 @-webkit-keyframes movImgPaisaje {
   from {
     transform: rotate(0deg);
@@ -115,20 +134,91 @@ img{
   }
 }
 
-/*Animación: Sintaxis estandar */
+/*Aquí se programa la animación de la imágen secundaria de paisaje*/
 @keyframes movImgPaisaje {
   from {
-    transform: rotate(0deg,0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform: rotate(0deg,10deg);
+    transform: rotate(10deg);
     -webkit-filter:drop-shadow(2px 2px 0px #82c3a6);
     filter: drop-shadow(2px 2px 0px #82c3a6);
     border: 2px solid black;
   }
 }
 
+/*Aquí se programa la animación de la imágen secundaria de retrato para el navegador Safari*/
+@-webkit-keyframes movImgRetrato {
+  from {
+    transform: translateY(0px);
+    transform: translateX(0px);
+  }
+  to {
+    transform: translate(20px,-5px);
+    -webkit-filter:drop-shadow(2px 2px 0px #82c3a6);
+    filter: drop-shadow(2px 2px 0px #82c3a6);
+    border: 2px solid black;
+  }
+}
+
+/*Aquí se programa la animación de la imágen secundaria de retrato*/
+@keyframes movImgRetrato {
+  from {
+    transform: translateY(0px);
+    transform: translateX(0px);
+  }
+  to {
+    transform: translate(20px,-5px);
+    -webkit-filter:drop-shadow(2px 2px 0px #82c3a6);
+    filter: drop-shadow(2px 2px 0px #82c3a6);
+    border: 2px solid black;
+  }
+}
+
+/*Se establece el keyframe para la imagen con id imgPaisaje*/
+/*:hover significa que se realizará el estilo cuando el mouse pase por encima de la imagen*/
 #imgPaisaje:hover {
-  -webkit-animation: movImgPaisaje 2s ;
-  animation: movImgPaisaje 2s ;
+  -webkit-animation: movImgPaisaje 1s ;
+  animation: movImgPaisaje 1s ;
+}
+
+/*Se establece el keyframe para la imagen con id imgRetrato*/
+/*:hover significa que se realizará el estilo cuando el mouse pase por encima de la imagen*/
+#imgRetrato:hover {
+  -webkit-animation: movImgRetrato 1s ;
+  animation: movImgRetrato 1s ;
+}
+
+/*Aquí inicia la parte de estilos para el pie de página*/
+footer{
+  background-color: #C6d5c5 ;
+  display: flex;
+  border-radius: 0px 0px 10px 10px;
+  flex-flow: row wrap;
+}
+
+/*Estilo propio para las secciones que se encuentran en el pie de página*/
+footer >section{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/*Estilos para cada título que se maneja el el pie de página*/
+.titiloPiePagina{
+  font-size: 200%;
+  font-weight: bold;
+  width: 100%;
+}
+
+/*Estilos para las imágenes de la sección Redes sociales del pie de página*/
+.imgPiePagina{
+  width: 15%;
+  height: 15%;
+  margin-right: 5%;
+}
+
+/*Estilos para el cuerpo de las secciones del pie de página*/
+.cuerpoPiePagina{
+  width: 80%;
+  color: black;
 }
